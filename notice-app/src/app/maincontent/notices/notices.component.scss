@@ -1,0 +1,37 @@
+
+.notices-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding: 20px;
+}
+
+.notice1 {
+    width: 250px;
+    height: 250px;
+    box-shadow: 1px 1px 5px;
+    padding: 10px;
+    position: relative;
+    background-color: #F5F5DC;
+}
+
+.buttons-notice {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+@media(max-width: 570px) {
+    .notices-container {
+        display: flex;
+        justify-content: center;
+    }
+}

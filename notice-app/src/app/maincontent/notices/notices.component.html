@@ -1,0 +1,19 @@
+<div class="notices-container" id="notes">
+    <div class="notice1">
+        <span>
+            <p>Beispiel Text</p>
+        </span>
+        <div class="buttons-notice">
+            <button class="btn">Bearbeiten</button>
+            <button class="btn">Vorlesen</button>
+            <button class="btn">Löschen</button>
+        </div>
+    </div>
+    <div>
+        <span>
+            @for (note of notices; track note) {
+            {{ note }}
+            }
+        </span>
+    </div>
+</div>
