@@ -10,10 +10,9 @@
         </div>
     </div>
     <div>
-        <span>
-            @for (note of notices; track note) {
-            {{ note }}
-            }
-        </span>
-    </div>
+        <h2>Notizen</h2>
+        <ul>
+          <li @for(let note of notices; track note)>{{ notices }}</li>
+        </ul>
+      </div>      
 </div>

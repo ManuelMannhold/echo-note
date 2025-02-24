@@ -17,12 +17,14 @@ export class AppComponent {
 
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
-    
+  
+    const rootElement = document.documentElement;
+  
     if (this.isDarkMode) {
-      document.body.classList.add('dark-mode');
+      rootElement.classList.add('dark-mode');
       localStorage.setItem('dark-mode', 'enabled');
     } else {
-      document.body.classList.remove('dark-mode');
+      rootElement.classList.remove('dark-mode');
       localStorage.setItem('dark-mode', 'disabled');
     }
   }

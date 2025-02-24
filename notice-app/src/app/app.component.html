@@ -1,5 +1,5 @@
-<app-header></app-header>
-<div class="dark-light-theme">
+<app-header [isDarkMode]="isDarkMode"></app-header>
+<div class="dark-light-theme" [class.dark-mode]="isDarkMode">
     <button (click)="toggleDarkMode()" class="theme-toggle-btn">
         <mat-icon>{{isDarkMode ? 'brightness_3' : 'wb_sunny'}}</mat-icon>
     </button>

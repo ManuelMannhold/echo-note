@@ -1,11 +1,13 @@
 <div class="header-container">
     <div class="input-notes">
-        <header>
-            <h1>Notiz App</h1>
-        </header>
-        <form>
-            <label for="input-notice"></label>
-            <input type="text" id="input-notes" #inputNotes placeholder="Notiz eingeben.....">
-            <button id="btn-send" class="btn" (click)="addNewNotes(inputNotes.value)">Speichern</button>
-        </form>
+      <header  [class.dark-mode]="isDarkMode">
+        <h1>Notiz App</h1>
+      </header>
+      <form (submit)="addNewNotes(inputNotes.value, $event)">
+        <label for="input-notice"></label>
+        <input type="text" id="input-notes" #inputNotes placeholder="Notiz eingeben...">
+        <button id="btn-send" class="btn">Speichern</button>
+      </form>
     </div>
+  </div>
+  

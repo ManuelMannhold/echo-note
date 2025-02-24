@@ -11,7 +11,7 @@ export class NoticeService {
       this.notices.push(note);
     }
     
-    displayNotice(note: string) {
-      this.notices.push(note)
+    getNotices(): string[] {
+      return this.notices;
     }
 }
