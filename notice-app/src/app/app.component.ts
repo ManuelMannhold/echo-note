@@ -18,7 +18,7 @@ export class AppComponent {
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
   
-    const rootElement = document.documentElement;
+    const rootElement = document.body;
   
     if (this.isDarkMode) {
       rootElement.classList.add('dark-mode');

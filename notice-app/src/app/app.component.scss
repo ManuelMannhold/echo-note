@@ -20,3 +20,14 @@ button.theme-toggle-btn {
 button.theme-toggle-btn:hover {
   transform: scale(1.1);
 }
+
+app-header .dark-mode {
+  background-color: #002B36!important;
+  color: #93A1A1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode input {
+  background-color: #17505f;
+  color: #93A1A1;
+}

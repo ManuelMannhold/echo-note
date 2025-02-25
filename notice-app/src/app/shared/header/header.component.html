@@ -1,11 +1,11 @@
-<div class="header-container">
+<div class="header-container" [class.dark-mode]="isDarkMode">
     <div class="input-notes">
-      <header  [class.dark-mode]="isDarkMode">
+      <header>
         <h1>Notiz App</h1>
       </header>
       <form (submit)="addNewNotes(inputNotes.value, $event)">
         <label for="input-notice"></label>
-        <input type="text" id="input-notes" #inputNotes placeholder="Notiz eingeben...">
+        <input type="text" id="input-notes" #inputNotes placeholder="Notiz eingeben..." autocomplete="off">
         <button id="btn-send" class="btn">Speichern</button>
       </form>
     </div>
