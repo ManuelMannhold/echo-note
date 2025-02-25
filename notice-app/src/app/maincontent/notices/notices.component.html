@@ -1,18 +1,16 @@
 <div class="notices-container" id="notes">
-    <div class="notice1">
-        <span>
-            <p>Beispiel Text</p>
-        </span>
-        <div class="buttons-notice">
-            <button class="btn">Bearbeiten</button>
-            <button class="btn">Vorlesen</button>
-            <button class="btn">Löschen</button>
-        </div>
-    </div>
     <div>
-        <h2>Notizen</h2>
-        <ul>
-          <li @for(let note of notices; track note)>{{ notices }}</li>
-        </ul>
+          @for(noticedata of noticedatas.notices; track noticedata) {
+            <div class="notice1">
+                <span>
+                    <p>{{ noticedata }}</p>
+                </span>
+                <div class="buttons-notice">
+                    <button class="btn">Bearbeiten</button>
+                    <button class="btn">Vorlesen</button>
+                    <button class="btn">Löschen</button>
+                  </div>
+            </div>
+          }
       </div>      
 </div>

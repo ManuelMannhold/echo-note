@@ -1,18 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NoticeService } from '../../shared/services/notice.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-notices',
   standalone: true,
   templateUrl: './notices.component.html',
-  styleUrl: './notices.component.scss'
+  styleUrl: './notices.component.scss',
+  imports: [CommonModule],
 })
 export class NoticesComponent {
-  notices: string[] = ['hase'];
-
-  constructor(private noticeService: NoticeService) {}
-
-  ngOnInit() {
-    this.notices = this.noticeService.getNotices();
-  }
+  noticedatas = inject(NoticeService);
 }

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 
 export class NoticeService {
-    private notices: string[] = [];
+    notices: string[] = ['hase'];
 
     addNotice(note: string) {
       this.notices.push(note);
