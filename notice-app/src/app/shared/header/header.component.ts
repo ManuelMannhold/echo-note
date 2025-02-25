@@ -13,9 +13,11 @@ export class HeaderComponent {
   @Input() isDarkMode: boolean = false;
 
   addNewNotes(note: string, event: Event) {
+    let input = document.getElementById('input-notes') as HTMLInputElement;
     event.preventDefault();
     if (note.trim()) {
       this.noticeService.addNotice(note);
     }
+    input.value = '';
   }
 }

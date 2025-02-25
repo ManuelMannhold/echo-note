@@ -11,4 +11,10 @@ import { CommonModule } from '@angular/common';
 })
 export class NoticesComponent {
   noticedatas = inject(NoticeService);
+
+  constructor(private noticeService: NoticeService) {}
+
+  deleteNotice(index: number) {
+    this.noticeService.deleteNotice(index)
+  }
 }
