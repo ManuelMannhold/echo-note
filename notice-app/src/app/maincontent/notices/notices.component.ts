@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { NoticeService } from '../../shared/services/notice.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-notices',
   standalone: true,
   templateUrl: './notices.component.html',
   styleUrl: './notices.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule ],
 })
 export class NoticesComponent {
   noticedatas = inject(NoticeService);
@@ -19,7 +20,7 @@ export class NoticesComponent {
     this.noticeService.deleteNotice(index)
   }
 
-  readNote(text: string): void {
+  readNotice(text: string): void {
     if (!text.trim()) {
       return;
     }
@@ -35,4 +36,25 @@ export class NoticesComponent {
   
     speechSynthesis.speak(utterance);
   }
+
+  editingIndex: number | null = null;
+  editingText: string = '';
+
+editNotice(text: string, index: number): void {
+  this.editingIndex = index;
+  this.editingText = text;
+}
+
+saveEdit(): void {
+  if (this.editingIndex !== null && this.editingText.trim()) {
+    this.noticedatas.notices[this.editingIndex] = this.editingText.trim();
+    this.editingIndex = null;
+    this.editingText = '';
+  }
+}
+
+cancelEdit(): void {
+  this.editingIndex = null;
+  this.editingText = '';
+}
 }

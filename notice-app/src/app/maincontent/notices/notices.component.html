@@ -1,12 +1,19 @@
 <div class="notices-container" id="notes">
     @for(noticedata of noticedatas.notices; track noticedata; let index = $index) {
     <div class="notice">
-        <span>
+        <span *ngIf="editingIndex !== index">
             <p>{{ noticedata }}</p>
         </span>
+
+        <div *ngIf="editingIndex === index">
+            <input class="input-edit" [(ngModel)]="editingText" />
+            <button (click)="saveEdit()">💾</button>
+            <button (click)="cancelEdit()">❌</button>
+        </div>
+
         <div class="buttons-notice">
-            <button class="btn">Bearbeiten</button>
-            <button class="btn" (click)="readNote(noticedata)">🔊 Vorlesen</button>
+            <button class="btn" (click)="editNotice(noticedata, index)">Bearbeiten</button>
+            <button class="btn" (click)="readNotice(noticedata)">🔊 Vorlesen</button>
             <button class="btn" (click)="deleteNotice(index)">Löschen</button>
         </div>
     </div>
