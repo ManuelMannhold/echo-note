@@ -12,9 +12,27 @@ import { CommonModule } from '@angular/common';
 export class NoticesComponent {
   noticedatas = inject(NoticeService);
 
+
   constructor(private noticeService: NoticeService) {}
 
   deleteNotice(index: number) {
     this.noticeService.deleteNotice(index)
+  }
+
+  readNote(text: string): void {
+    if (!text.trim()) {
+      return;
+    }
+
+    if (speechSynthesis.speaking || speechSynthesis.pending) {
+      speechSynthesis.cancel();
+    }
+  
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'de-DE';
+    utterance.rate = 1;  
+    utterance.pitch = 3; 
+  
+    speechSynthesis.speak(utterance);
   }
 }

@@ -1,14 +1,14 @@
 <div class="notices-container" id="notes">
-          @for(noticedata of noticedatas.notices; track noticedata; let index = $index) {
-            <div class="notice1">
-                <span>
-                    <p>{{ noticedata }}</p>
-                </span>
-                <div class="buttons-notice">
-                    <button class="btn">Bearbeiten</button>
-                    <button class="btn">Vorlesen</button>
-                    <button class="btn" (click)="deleteNotice(index)">Löschen</button>
-                  </div>
-            </div>
-          }    
+    @for(noticedata of noticedatas.notices; track noticedata; let index = $index) {
+    <div class="notice1">
+        <span>
+            <p>{{ noticedata }}</p>
+        </span>
+        <div class="buttons-notice">
+            <button class="btn">Bearbeiten</button>
+            <button class="btn" (click)="readNote(noticedata)">🔊 Vorlesen</button>
+            <button class="btn" (click)="deleteNotice(index)">Löschen</button>
+        </div>
+    </div>
+    }
 </div>

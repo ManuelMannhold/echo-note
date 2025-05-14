@@ -8,6 +8,8 @@ import { NoticeService } from '../services/notice.service';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  isSubmitted = false;
+  
   constructor(private noticeService: NoticeService) {}
 
   @Input() isDarkMode: boolean = false;
@@ -15,9 +17,14 @@ export class HeaderComponent {
   addNewNotes(note: string, event: Event) {
     let input = document.getElementById('input-notes') as HTMLInputElement;
     event.preventDefault();
-    if (note.trim()) {
+    this.isSubmitted = true;
+    if (!note.trim()) {
+      return
+    } else {
       this.noticeService.addNotice(note);
+      input.value = '';
+    this.isSubmitted = false;
     }
-    input.value = '';
+    
   }
 }
