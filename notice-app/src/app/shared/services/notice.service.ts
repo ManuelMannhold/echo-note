@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class NoticeService {
   private storageKey = 'notices';
   notices: string[] = [];
+  date = new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" });
 
   constructor() {
     this.loadFromLocalStorage();
@@ -16,11 +17,16 @@ export class NoticeService {
     this.saveToLocalStorage();
   }
 
+  editNotice(index: number, newNote: string) {
+    this.notices[index] = newNote;
+    this.saveToLocalStorage();
+  }
+
   getNotices(): string[] {
     return this.notices;
   }
 
-  deleteNotice(index: number) {
+  deleteNotices(index: number) {
     this.notices.splice(index, 1);
     this.saveToLocalStorage();
   }

@@ -11,10 +11,24 @@ import { CommonModule } from '@angular/common';
 })
 export class NoticesComponent {
   noticedatas = inject(NoticeService);
+  isEditing: boolean[] = [];
 
-  constructor(private noticeService: NoticeService) {}
+  constructor() {
+    this.isEditing = new Array(this.noticedatas.notices.length).fill(false);
+  }
+
+  editNotice(index: number) {
+    this.isEditing[index] = true;
+  }
+
+  saveNotice(index: number, event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.noticedatas.editNotice(index, inputElement.value);
+    this.isEditing[index] = false;
+  }
 
   deleteNotice(index: number) {
-    this.noticeService.deleteNotice(index)
+    this.noticedatas.deleteNotices(index);
+    this.isEditing.splice(index, 1);
   }
 }
