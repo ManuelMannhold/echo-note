@@ -2,6 +2,10 @@ body {
     font-family: roboto;
 }
 
+.d-none {
+    display: none;
+  }
+
 .input-notes {
     width: 100%;
     display: flex;
@@ -56,14 +60,30 @@ form {
     display: flex;
     gap: 10px;
 
+    span {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
     input {
         border-radius: 15px;
         outline: none;
         padding: 10px;
     }
+
+    input.invalid {
+        border: 2px solid red;
+        background-color: #ffe6e6;
+      }
 }
 
 :host(.dark-mode) {
     background-color: #121212;
     color: white;
+}
+
+.required-field {
+    color: red;
 }

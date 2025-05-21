@@ -1,15 +1,19 @@
 <div class="notices-container" id="notes">
     @for(noticedata of noticedatas.notices; track noticedata; let index = $index) {
-    <div class="notice1">
-        <span>{{ noticedatas.date }}</span>
-        <span>
-            <p *ngIf="!isEditing[index]" (click)="editNotice(index)">{{ noticedata }}</p>
-            <input *ngIf="isEditing[index]" [value]="noticedata" (blur)="saveNotice(index, $event)"
-                (keydown.enter)="saveNotice(index, $event)" autofocus>
+    <div class="notice">
+        <span *ngIf="editingIndex !== index">
+            <p>{{ noticedata }}</p>
         </span>
+
+        <div *ngIf="editingIndex === index">
+            <input class="input-edit" [(ngModel)]="editingText" />
+            <button (click)="saveEdit()">💾</button>
+            <button (click)="cancelEdit()">❌</button>
+        </div>
+
         <div class="buttons-notice">
-            <button class="btn" (click)="editNotice(noticedatas.notices.indexOf(noticedata))">Bearbeiten</button>
-            <button class="btn">Vorlesen</button>
+            <button class="btn" (click)="editNotice(noticedata, index)">Bearbeiten</button>
+            <button class="btn" (click)="readNotice(noticedata)">🔊 Vorlesen</button>
             <button class="btn" (click)="deleteNotice(index)">Löschen</button>
         </div>
     </div>

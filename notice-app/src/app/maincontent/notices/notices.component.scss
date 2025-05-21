@@ -7,8 +7,8 @@
     padding: 20px;
 }
 
-.notice1 {
-    width: 250px;
+.notice {
+    width: 280px;
     height: 250px;
     box-shadow: 1px 1px 5px;
     padding: 10px;
@@ -34,6 +34,11 @@ input {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+}
+
+.input-edit {
+    padding: 5px;
+    border-radius: 15px;
 }
 
 @media(max-width: 570px) {
