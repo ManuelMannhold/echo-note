@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class NoticesComponent {
   noticedatas = inject(NoticeService);
+  isEditing: any;
 
 
   constructor(private noticeService: NoticeService) {}

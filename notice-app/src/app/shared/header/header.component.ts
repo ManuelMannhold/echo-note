@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { NoticeService } from '../services/notice.service';
+import { RouterLink } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
+  imports: [RouterLink, MatIcon],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
