@@ -5,11 +5,9 @@
             <p>{{ trashDatas }}</p>
         </span>
         <div class="buttons-notice">
+            <button class="btn" (click)="reloadNotice(index)">Hinzufügen</button>
             <button class="btn" (click)="readNotice(trashDatas)">🔊 Vorlesen</button>
             <button class="btn" (click)="deleteNotice(index)">Löschen</button>
-            <div>
-                {{trashDatas}}
-            </div>
         </div>
     </div>
     }

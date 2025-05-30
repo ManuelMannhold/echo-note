@@ -11,8 +11,7 @@ export class NoticeService {
   private storageKeyTrash = 'trash'
   notices: string[] = [];
   trash: string[] = [];
-  date = new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" });
-
+ 
   constructor() {
     this.loadFromLocalStorage();
   }
@@ -39,6 +38,13 @@ export class NoticeService {
 
   deleteTrash(index: number) {
     this.trash.splice(index, 1);
+    this.saveToLocalStorage();
+  }
+
+  reloadNotices(index: number) {
+    this.notices.push(this.trash[index]);
+    this.trash.splice(index, 1);
+    this.saveToLocalStorage();
   }
 
   private saveToLocalStorage() {
@@ -51,7 +57,7 @@ export class NoticeService {
     const savedTrash = localStorage.getItem(this.storageKeyTrash);
     if (savedNotices) {
       this.notices = JSON.parse(savedNotices);
-    } if(savedTrash) {
+    } if (savedTrash) {
       this.trash = JSON.parse(savedTrash);
     }
   }

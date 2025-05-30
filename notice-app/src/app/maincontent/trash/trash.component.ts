@@ -34,4 +34,8 @@ export class TrashComponent {
     this.trashDatas.deleteTrash(index);
     this.isEditing.splice(index, 1);
   }
+
+  reloadNotice(index: number) {
+    this.trashDatas.reloadNotices(index);
+  }
 }
