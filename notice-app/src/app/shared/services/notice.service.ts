@@ -4,8 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NoticeService {
+  splice(index: number) {
+    throw new Error('Method not implemented.');
+  }
   private storageKey = 'notices';
+  private storageKeyTrash = 'trash'
   notices: string[] = [];
+  trash: string[] = [];
   date = new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" });
 
   constructor() {
@@ -27,18 +32,27 @@ export class NoticeService {
   }
 
   deleteNotices(index: number) {
+    this.trash.push(this.notices[index])
     this.notices.splice(index, 1);
     this.saveToLocalStorage();
   }
 
+  deleteTrash(index: number) {
+    this.trash.splice(index, 1);
+  }
+
   private saveToLocalStorage() {
     localStorage.setItem(this.storageKey, JSON.stringify(this.notices));
+    localStorage.setItem(this.storageKeyTrash, JSON.stringify(this.trash));
   }
 
   private loadFromLocalStorage() {
     const savedNotices = localStorage.getItem(this.storageKey);
+    const savedTrash = localStorage.getItem(this.storageKeyTrash);
     if (savedNotices) {
       this.notices = JSON.parse(savedNotices);
+    } if(savedTrash) {
+      this.trash = JSON.parse(savedTrash);
     }
   }
 }

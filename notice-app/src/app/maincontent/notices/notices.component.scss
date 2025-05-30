@@ -33,7 +33,12 @@ input {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     padding: 10px;
+}
+
+.date-time {
+    color: rgba(0, 0, 0, 0.2);
 }
 
 .input-edit {

@@ -1,1 +1,16 @@
-<p>trash works!</p>
+<div class="trash-container" id="notes">
+    @for(trashDatas of trashDatas.trash; track trashDatas; let index = $index) {
+    <div class="trash-notice">
+        <span>
+            <p>{{ trashDatas }}</p>
+        </span>
+        <div class="buttons-notice">
+            <button class="btn" (click)="readNotice(trashDatas)">🔊 Vorlesen</button>
+            <button class="btn" (click)="deleteNotice(index)">Löschen</button>
+            <div>
+                {{trashDatas}}
+            </div>
+        </div>
+    </div>
+    }
+</div>
