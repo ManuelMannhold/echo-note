@@ -7,8 +7,10 @@
 
     <div *ngIf="editingIndex === index">
       <input class="input-edit" [(ngModel)]="editingText" />
-      <button (click)="saveEdit()">💾</button>
-      <button (click)="cancelEdit()">❌</button>
+      <div class="edit-button">
+        <button (click)="saveEdit()">💾</button>
+        <button (click)="cancelEdit()">❌</button>
+      </div>
     </div>
 
     <div class="buttons-notice">

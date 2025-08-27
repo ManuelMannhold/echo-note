@@ -4,6 +4,10 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
+  template: `
+    <button (click)="startRecognition()">Spracheingabe starten</button>
+    <p>Erkannter Text: {{ recognizedText }}</p>
+  `,
   standalone: true,
   imports: [RouterLink, RouterModule],
   templateUrl: './header.component.html',
