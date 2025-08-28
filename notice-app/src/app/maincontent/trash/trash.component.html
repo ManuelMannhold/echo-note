@@ -2,7 +2,7 @@
     @for(trashDatas of trashDatas.trash; track trashDatas; let index = $index) {
     <div class="trash-notice">
         <span>
-            <p>{{ trashDatas }}</p>
+            <p class="notices-text">{{ trashDatas }}</p>
         </span>
         <div class="buttons-trash">
             <button class="btn" (click)="reloadNotice(index)">Hinzufügen</button>

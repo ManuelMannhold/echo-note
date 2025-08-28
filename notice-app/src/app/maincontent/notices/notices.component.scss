@@ -1,66 +1,66 @@
 .notices-container {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 20px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
 }
 
 .notice {
-    width: 280px;
-    height: 250px;
-    box-shadow: 1px 1px 5px;
-    padding: 10px;
-    position: relative;
-    background-color: #F5F5DC;
+  width: 280px;
+  height: 250px;
+  box-shadow: 1px 1px 5px;
+  padding: 10px;
+  position: relative;
+  background-color: #f5f5dc;
 }
 
 input {
-    font-size: 16px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 100%;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
 }
 
 .edit-button {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
 
-    button {
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-    }
+  button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
 }
 
 .buttons-notice {
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .date-time {
-    color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .input-edit {
-    padding: 5px;
-    border-radius: 15px;
+  padding: 5px;
+  border-radius: 15px;
 }
 
-@media(max-width: 570px) {
-    .notices-container {
-        display: flex;
-        justify-content: center;
-    }
+@media (max-width: 570px) {
+  .notices-container {
+    display: flex;
+    justify-content: center;
+  }
 }

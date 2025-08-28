@@ -14,7 +14,7 @@ export class NoticesComponent {
   noticeDatas = inject(NoticeService);
   isEditing: any;
 
-  constructor(private noticeService: NoticeService) { }
+  constructor(private noticeService: NoticeService) {}
 
   deleteNotice(index: number) {
     this.noticeDatas.deleteNotices(index);

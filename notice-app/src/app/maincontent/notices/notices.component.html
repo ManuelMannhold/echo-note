@@ -2,7 +2,7 @@
   @for(noticedata of noticeDatas.notices; track noticedata; let index = $index) {
   <div class="notice">
     <span *ngIf="editingIndex !== index">
-      <p>{{ noticedata }}</p>
+      <p class="notices-text">{{ noticedata }}</p>
     </span>
 
     <div *ngIf="editingIndex === index">
@@ -14,10 +14,10 @@
     </div>
 
     <div class="buttons-notice">
-        <button class="btn" (click)="editNotice(noticedata, index)">Bearbeiten</button>
-        <button class="btn" (click)="readNotice(noticedata)">🔊 Vorlesen</button>
-        <button class="btn" (click)="deleteNotice(index)">Löschen</button>
-      </div>
+      <button class="btn" (click)="editNotice(noticedata, index)">Bearbeiten</button>
+      <button class="btn" (click)="readNotice(noticedata)">🔊 Vorlesen</button>
+      <button class="btn" (click)="deleteNotice(index)">Löschen</button>
     </div>
+  </div>
   }
 </div>
