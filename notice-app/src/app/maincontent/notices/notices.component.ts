@@ -12,13 +12,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class NoticesComponent {
   noticeDatas = inject(NoticeService);
-  isEditing: any;
 
   constructor(private noticeService: NoticeService) {}
 
   deleteNotice(index: number) {
     this.noticeDatas.deleteNotices(index);
-    this.isEditing.splice(index, 1);
   }
 
   readNotice(text: string): void {

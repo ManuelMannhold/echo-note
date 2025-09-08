@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./shared/header/header.component";
+import { HeaderComponent } from './shared/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [RouterOutlet, HeaderComponent, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
   title = 'notice-app';
@@ -17,9 +17,9 @@ export class AppComponent {
 
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
-  
+
     const rootElement = document.body;
-  
+
     if (this.isDarkMode) {
       rootElement.classList.add('dark-mode');
       localStorage.setItem('dark-mode', 'enabled');
@@ -31,7 +31,7 @@ export class AppComponent {
 
   ngOnInit() {
     const darkMode = localStorage.getItem('dark-mode');
-    if(darkMode === 'enabled') {
+    if (darkMode === 'enabled') {
       this.isDarkMode = true;
       document.body.classList.add('dark-mode');
     }

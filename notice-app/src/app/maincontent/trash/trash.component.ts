@@ -7,13 +7,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './trash.component.html',
-  styleUrl: './trash.component.scss'
+  styleUrl: './trash.component.scss',
 })
 export class TrashComponent {
   trashDatas = inject(NoticeService);
-  isEditing: any;
 
-  constructor(private noticeService: NoticeService) {};
+  constructor(private noticeService: NoticeService) {}
 
   readNotice(text: string): void {
     if (!text.trim()) {
@@ -32,7 +31,6 @@ export class TrashComponent {
 
   deleteNotice(index: number) {
     this.trashDatas.deleteTrash(index);
-    this.isEditing.splice(index, 1);
   }
 
   reloadNotice(index: number) {

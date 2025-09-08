@@ -4,19 +4,15 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  template: `
-    <button (click)="startRecognition()">Spracheingabe starten</button>
-    <p>Erkannter Text: {{ recognizedText }}</p>
-  `,
   standalone: true,
   imports: [RouterLink, RouterModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   isSubmitted = false;
 
-  constructor(private noticeService: NoticeService, private router: Router) { }
+  constructor(private noticeService: NoticeService, private router: Router) {}
 
   @Input() isDarkMode: boolean = false;
 
@@ -25,7 +21,7 @@ export class HeaderComponent {
     event.preventDefault();
     this.isSubmitted = true;
     if (!note.trim()) {
-      return
+      return;
     } else {
       this.noticeService.addNotice(note);
       this.router.navigate(['/notices']);
