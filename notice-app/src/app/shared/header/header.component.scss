@@ -1,108 +1,119 @@
 body {
-    font-family: roboto;
+  font-family: roboto;
 }
 
 .d-none {
-    display: none;
-  }
+  display: none;
+}
 
 .input-notes {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+
+  form {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
-    padding-top: 20px;
 
-    form {
-        display: flex;
-        gap: 20px;
-
-        input {
-            padding: 10pxpx;
-            border-radius: 15px;
-        }
+    input {
+      padding: 10pxpx;
+      border-radius: 15px;
     }
+  }
 }
 
 .header-container {
-    width: 100%;
-    height: 150px;
-    background-color: #FAFAFA;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    box-shadow: 0 0 10px;
+  width: 100%;
+  height: 150px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0 0 10px;
+}
+
+.search-area {
+  height: 50px;
+  position: relative;
+
+  img {
+    position: absolute;
+    height: 50%;
+    right: 6px;
+    top: 15%;
+  }
 }
 
 header {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .navigate {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    justify-content: flex-start;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: flex-start;
 
-    a {
-        text-decoration: none;
-        color: black;
-
-    }
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 form {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  gap: 10px;
+
+  span {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
 
-    span {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
+  input {
+    border-radius: 15px;
+    outline: none;
+    padding: 10px;
+  }
 
-    input {
-        border-radius: 15px;
-        outline: none;
-        padding: 10px;
-    }
-
-    input.invalid {
-        border: 2px solid red;
-        background-color: #ffe6e6;
-      }
+  input.invalid {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+  }
 }
 
 :host(.dark-mode) {
-    background-color: #121212;
-    color: white;
+  background-color: #121212;
+  color: white;
 }
 
 .required-field {
-    color: red;
+  color: red;
 }
 
 .links-trash-notices {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    display: flex;
-    gap: 20px;
-    
-    a {
-        text-decoration: none;
-        color: black;
-        cursor: pointer;
-        font-size: 24px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  display: flex;
+  gap: 20px;
 
-        &:hover {
-            text-decoration: underline;
-        }
+  a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 24px;
+
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }

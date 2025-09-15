@@ -1,32 +1,32 @@
 .trash-container {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 20px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
 }
 
 .trash-notice {
-    width: 280px;
-    height: 250px;
-    box-shadow: 1px 1px 5px;
-    padding: 10px;
-    position: relative;
-    background-color: #F5F5DC;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 10px;
+  width: 280px;
+  height: 250px;
+  box-shadow: 1px 1px 5px;
+  padding: 10px;
+  position: relative;
+  background-color: #f5f5dc;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .buttons-trash {
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }

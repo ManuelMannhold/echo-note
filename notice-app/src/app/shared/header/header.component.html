@@ -8,6 +8,10 @@
       <input type="text" id="input-notes" #inputNotes placeholder="Notiz eingeben..." autocomplete="off"
         [class.invalid]="isSubmitted && !inputNotes.value">
       <button id="btn-send" class="btn">Speichern</button>
+      <div class="search-area">
+        <input type="text">
+        <img src="../../../assets/images/magnifying-glass.png" alt="">
+      </div>
     </form>
   </div>
   <div class="links-trash-notices">
