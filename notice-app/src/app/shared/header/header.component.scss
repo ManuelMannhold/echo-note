@@ -108,4 +108,12 @@ form {
 
 .search-area {
     position: relative;
+    
+        img  {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            height: 50%;
+            cursor: pointer;
+        }
 }
