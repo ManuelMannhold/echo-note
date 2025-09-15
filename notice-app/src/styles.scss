@@ -42,4 +42,5 @@ body {
 .active-route {
   color: red !important;
   text-decoration: underline !important;
+  transition: all 225ms ease-in-out;
 }
