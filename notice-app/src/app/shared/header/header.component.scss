@@ -90,6 +90,10 @@ form {
   }
 }
 
+.search-area {
+  position: relative;
+}
+
 :host(.dark-mode) {
   background-color: #121212;
   color: white;
