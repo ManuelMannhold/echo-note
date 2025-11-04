@@ -1,6 +1,9 @@
 <div class="notices-container" id="notes">
-  @for(noticedata of noticeDatas.notices; track noticedata; let index = $index) {
-  <div class="notice">
+  <div
+    class="notice"
+    *ngFor="let noticedata of noticeDatas.notices; let index = index"
+    [class.crumple]="removing[index]"
+  >
     <span *ngIf="editingIndex !== index">
       <p class="notices-text">{{ noticedata }}</p>
     </span>
@@ -14,10 +17,11 @@
     </div>
 
     <div class="buttons-notice">
-      <button class="btn" (click)="editNotice(noticedata, index)">Bearbeiten</button>
+      <button class="btn" (click)="editNotice(noticedata, index)">
+        Bearbeiten
+      </button>
       <button class="btn" (click)="readNotice(noticedata)">🔊 Vorlesen</button>
       <button class="btn" (click)="deleteNotice(index)">Löschen</button>
     </div>
   </div>
-  }
 </div>

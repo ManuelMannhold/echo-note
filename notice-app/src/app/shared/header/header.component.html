@@ -9,7 +9,7 @@
         [class.invalid]="isSubmitted && !inputNotes.value">
       <button id="btn-send" class="btn">Speichern</button>
       <div class="search-area">
-      <input type="text" placeholder="Suche eingeben...">
+      <input type="text" placeholder="Suche eingeben..." id="search-field" #input (input)="inputField(input.value)">  
       <img src="../../assets/images/magnifying-glass.png" alt="magnifying glass image">
       </div>
     </form>

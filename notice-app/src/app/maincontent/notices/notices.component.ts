@@ -15,8 +15,20 @@ export class NoticesComponent {
 
   constructor(private noticeService: NoticeService) {}
 
+  // track which notices are currently playing the delete animation
+  removing: boolean[] = [];
+
   deleteNotice(index: number) {
-    this.noticeDatas.deleteNotices(index);
+    // mark item as removing so template adds the animation class
+    this.removing[index] = true;
+
+    // wait for animation to finish, then actually delete the notice
+    const ANIM_MS = 800; // must match animation duration in CSS
+    setTimeout(() => {
+      this.noticeDatas.deleteNotices(index);
+      // cleanup the removing array so indices remain aligned
+      this.removing.splice(index, 1);
+    }, ANIM_MS);
   }
 
   readNotice(text: string): void {

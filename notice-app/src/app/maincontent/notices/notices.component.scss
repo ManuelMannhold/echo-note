@@ -13,6 +13,7 @@
   padding: 10px;
   position: relative;
   background-color: #f5f5dc;
+  transition: transform 0.3s;
 }
 
 input {
@@ -63,4 +64,31 @@ input {
     display: flex;
     justify-content: center;
   }
+}
+
+@keyframes crumple {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.9) rotate(10deg);
+  }
+  50% {
+    transform: scale(0.7) rotate(-10deg);
+  }
+  75% {
+    transform: scale(0.4) rotate(15deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.crumple {
+  animation: crumple 0.8s ease forwards;
+  /* ensure it doesn't respond to further interactions while animating */
+  pointer-events: none;
 }

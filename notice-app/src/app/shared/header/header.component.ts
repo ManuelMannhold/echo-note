@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { NoticeService } from '../services/notice.service';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 
@@ -28,5 +28,9 @@ export class HeaderComponent {
       input.value = '';
       this.isSubmitted = false;
     }
+  }
+
+  inputField(input: string) {
+    return input;
   }
 }

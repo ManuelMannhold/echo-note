@@ -8,10 +8,10 @@ export class NoticeService {
     throw new Error('Method not implemented.');
   }
   private storageKey = 'notices';
-  private storageKeyTrash = 'trash'
+  private storageKeyTrash = 'trash';
   notices: string[] = [];
   trash: string[] = [];
- 
+
   constructor() {
     this.loadFromLocalStorage();
   }
@@ -31,7 +31,7 @@ export class NoticeService {
   }
 
   deleteNotices(index: number) {
-    this.trash.push(this.notices[index])
+    this.trash.push(this.notices[index]);
     this.notices.splice(index, 1);
     this.saveToLocalStorage();
   }
@@ -57,7 +57,8 @@ export class NoticeService {
     const savedTrash = localStorage.getItem(this.storageKeyTrash);
     if (savedNotices) {
       this.notices = JSON.parse(savedNotices);
-    } if (savedTrash) {
+    }
+    if (savedTrash) {
       this.trash = JSON.parse(savedTrash);
     }
   }
