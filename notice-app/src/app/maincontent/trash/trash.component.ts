@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class TrashComponent {
   trashDatas = inject(NoticeService);
+  removing: boolean[] = [];
 
   constructor(private noticeService: NoticeService) {}
 
@@ -30,7 +31,13 @@ export class TrashComponent {
   }
 
   deleteNotice(index: number) {
-    this.trashDatas.deleteTrash(index);
+    this.removing[index] = true;
+
+    const ANIMATION_MS = 800;
+    setTimeout(() => {
+      this.trashDatas.deleteTrash(index);
+      this.removing.splice(index, 1);
+    }, ANIMATION_MS);
   }
 
   reloadNotice(index: number) {

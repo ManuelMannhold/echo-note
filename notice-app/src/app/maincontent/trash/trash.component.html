@@ -1,14 +1,16 @@
 <div class="trash-container" id="notes">
-    @for(trashDatas of trashDatas.trash; track trashDatas; let index = $index) {
-    <div class="trash-notice">
-        <span>
-            <p class="notices-text">{{ trashDatas }}</p>
-        </span>
-        <div class="buttons-trash">
-            <button class="btn" (click)="reloadNotice(index)">Hinzufügen</button>
-            <button class="btn" (click)="readNotice(trashDatas)">🔊 Vorlesen</button>
-            <button class="btn" (click)="deleteNotice(index)">Löschen</button>
-        </div>
+  <div
+    class="trash-notice"
+    *ngFor="let item of trashDatas.trash; let i = index"
+    [class.crumple]="removing[i]"
+  >
+    <span>
+      <p class="notices-text">{{ item }}</p>
+    </span>
+    <div class="buttons-trash">
+      <button class="btn" (click)="reloadNotice(i)">Hinzufügen</button>
+      <button class="btn" (click)="readNotice(item)">🔊 Vorlesen</button>
+      <button class="btn" (click)="deleteNotice(i)">Löschen</button>
     </div>
-    }
+  </div>
 </div>

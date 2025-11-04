@@ -89,6 +89,5 @@ input {
 
 .crumple {
   animation: crumple 0.8s ease forwards;
-  /* ensure it doesn't respond to further interactions while animating */
   pointer-events: none;
 }

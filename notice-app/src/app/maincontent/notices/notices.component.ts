@@ -12,23 +12,18 @@ import { FormsModule } from '@angular/forms';
 })
 export class NoticesComponent {
   noticeDatas = inject(NoticeService);
+  removing: boolean[] = [];
 
   constructor(private noticeService: NoticeService) {}
 
-  // track which notices are currently playing the delete animation
-  removing: boolean[] = [];
-
   deleteNotice(index: number) {
-    // mark item as removing so template adds the animation class
     this.removing[index] = true;
 
-    // wait for animation to finish, then actually delete the notice
-    const ANIM_MS = 800; // must match animation duration in CSS
+    const ANIMATION_TIMER = 800;
     setTimeout(() => {
       this.noticeDatas.deleteNotices(index);
-      // cleanup the removing array so indices remain aligned
       this.removing.splice(index, 1);
-    }, ANIM_MS);
+    }, ANIMATION_TIMER);
   }
 
   readNotice(text: string): void {
