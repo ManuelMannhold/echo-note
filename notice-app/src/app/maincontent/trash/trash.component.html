@@ -3,6 +3,7 @@
     class="trash-notice"
     *ngFor="let item of trashDatas.trash; let i = index"
     [class.crumple]="removing[i]"
+    [class.send]="sending[i]"
   >
     <span>
       <p class="notices-text">{{ item }}</p>

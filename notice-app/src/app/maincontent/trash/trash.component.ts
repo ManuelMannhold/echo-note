@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 export class TrashComponent {
   trashDatas = inject(NoticeService);
   removing: boolean[] = [];
+  sending: boolean[] = [];
 
   constructor(private noticeService: NoticeService) {}
 
@@ -41,6 +42,11 @@ export class TrashComponent {
   }
 
   reloadNotice(index: number) {
-    this.trashDatas.reloadNotices(index);
+    this.sending[index] = true;
+    const ANIMATION_TIME = 600;
+    setTimeout(() => {
+      this.trashDatas.reloadNotices(index);
+      this.sending.splice(index, 1);
+    }, ANIMATION_TIME);
   }
 }

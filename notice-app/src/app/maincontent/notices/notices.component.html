@@ -3,6 +3,7 @@
     class="notice"
     *ngFor="let noticedata of noticeDatas.notices; let index = index"
     [class.crumple]="removing[index]"
+    [class.incoming]="incoming[index]"
   >
     <span *ngIf="editingIndex !== index">
       <p class="notices-text">{{ noticedata }}</p>

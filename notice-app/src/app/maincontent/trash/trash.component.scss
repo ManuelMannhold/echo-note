@@ -56,3 +56,23 @@
   animation: crumple 0.8s ease forwards;
   pointer-events: none;
 }
+
+@keyframes send {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-30px) scale(0.9) translateX(30px);
+    opacity: 0;
+  }
+}
+
+.send {
+  animation: send 0.6s ease forwards;
+  pointer-events: none;
+}

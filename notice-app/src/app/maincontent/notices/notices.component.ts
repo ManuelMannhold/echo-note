@@ -13,8 +13,18 @@ import { FormsModule } from '@angular/forms';
 export class NoticesComponent {
   noticeDatas = inject(NoticeService);
   removing: boolean[] = [];
+  incoming: boolean[] = [];
 
   constructor(private noticeService: NoticeService) {}
+
+  ngOnInit(): void {
+    this.noticeService.addedNotice.subscribe((index: number) => {
+      this.incoming[index] = true;
+      setTimeout(() => {
+        this.incoming[index] = false;
+      }, 400);
+    });
+  }
 
   deleteNotice(index: number) {
     this.removing[index] = true;

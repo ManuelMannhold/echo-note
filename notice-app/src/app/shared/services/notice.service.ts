@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ export class NoticeService {
   private storageKeyTrash = 'trash';
   notices: string[] = [];
   trash: string[] = [];
+  addedNotice = new Subject<number>();
 
   constructor() {
     this.loadFromLocalStorage();
@@ -43,8 +45,10 @@ export class NoticeService {
 
   reloadNotices(index: number) {
     this.notices.push(this.trash[index]);
+    const NEW_INDEX = this.notices.length - 1;
     this.trash.splice(index, 1);
     this.saveToLocalStorage();
+    this.addedNotice.next(NEW_INDEX);
   }
 
   private saveToLocalStorage() {
